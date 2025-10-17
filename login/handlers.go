@@ -34,8 +34,13 @@ func (a *application) loginHandler(c fiber.Ctx) error {
 		}
 	}
 
+	fmt.Println(u)
+
 	// constant time comparison
-	if subtle.ConstantTimeCompare(hashSHA1(r.Password), []byte(u.Password)) != 1 {
+	if subtle.ConstantTimeCompare(
+		[]byte(hashSHA1(r.Password)),
+		[]byte(u.Password),
+	) != 1 {
 		return fiber.NewError(fiber.StatusUnauthorized, "invalid credentials")
 	}
 

@@ -2,10 +2,11 @@ package main
 
 import (
 	"crypto/sha1"
+	"fmt"
 )
 
-func hashSHA1(s string) []byte {
+func hashSHA1(s string) string {
 	h := sha1.New()
 	h.Write([]byte(s))
-	return h.Sum(nil)
+	return fmt.Sprintf("%x", h.Sum(nil))
 }

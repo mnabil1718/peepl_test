@@ -9,13 +9,13 @@ import (
 var users []*User = []*User{
 	{
 		Username: "jarwo_kuwat",
-		Password: fmt.Sprintf("%x", hashSHA1("secret123")),
+		Password: hashSHA1("secret123"),
 		Email:    "jarwo@gmail.com",
 		RealName: "Jarwo Kuwat",
 	},
 	{
 		Username: "sule_prikitiw",
-		Password: fmt.Sprintf("%x", hashSHA1("secret123")),
+		Password: hashSHA1("secret123"),
 		Email:    "sule@gmail.com",
 		RealName: "Sule Sutisna",
 	},
